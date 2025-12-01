@@ -27,27 +27,6 @@ export function ProjectsSection() {
       image: "/project-03.png",
       gradient: "from-orange-500 to-red-500",
     },
-    {
-      title: "IA e Machine Learning",
-      description: "Introdução prática a inteligência artificial através de projetos desafiadores e acessíveis.",
-      technologies: ["IA", "Python", "Machine Learning"],
-      image: "/project-04.png",
-      gradient: "from-green-500 to-emerald-500",
-    },
-    {
-      title: "Soluções Sociais",
-      description: "Projetos que usam tecnologia para resolver problemas reais da comunidade e sociedade.",
-      technologies: ["Social", "Impacto", "Comunidade"],
-      image: "/project-05.png",
-      gradient: "from-yellow-500 to-orange-500",
-    },
-    {
-      title: "Maker Space",
-      description: "Ambiente colaborativo onde alunos prototipam ideias, desde conceito até implementação prática.",
-      technologies: ["Maker", "3D", "Prototipagem"],
-      image: "/project-06.png",
-      gradient: "from-pink-500 to-rose-500",
-    },
   ]
 
   return (

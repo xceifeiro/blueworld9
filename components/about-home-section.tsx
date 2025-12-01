@@ -98,7 +98,7 @@ export function AboutHomeSection() {
             {/* BOX COM BORDA ARREDONDADA E CLIP DA IMAGEM */}
             <div className="relative aspect-square rounded-2xl overflow-hidden z-[1]">
                 <Image
-                src="/img-02.png"
+                src="/sala-de-aula.jpeg"
                 alt="Estudantes trabalhando com robótica"
                 fill
                 className="object-cover"
@@ -153,7 +153,7 @@ export function AboutHomeSection() {
               Nossa abordagem combina tecnologia de ponta com práticas pedagógicas comprovadas, criando experiências de
               aprendizado memoráveis e impactantes que preparam os alunos para os desafios do futuro.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="w-full flex flex-wrap gap-3">
               <span className="px-4 py-2 bg-yellow-400/20 border border-yellow-400/50 rounded-full text-yellow-300 text-sm">
                 STEAM
               </span>
@@ -170,7 +170,7 @@ export function AboutHomeSection() {
             <Button
             size="lg"
             variant="outline"
-            className="border-white bg-white/10 hover:bg-cyan-500 hover:border-cyan-500 
+            className="w-full border-white bg-white/10 hover:bg-cyan-500 hover:border-cyan-500 
                         text-white text-lg px-8 backdrop-blur hover:scale-[1.05]"
             onClick={() => router.push("/sobre")} // 👈 coloque seu link aqui
             >
@@ -206,7 +206,7 @@ export function AboutHomeSection() {
           })}
         </div>
 
-        {/* STATS - VIBRANT COLORFUL */}
+        {/* STATS - VIBRANT COLORFUL 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {stats.map((stat, index) => (
             <div
@@ -219,7 +219,7 @@ export function AboutHomeSection() {
               <p className="text-white/90 text-lg font-medium">{stat.label}</p>
             </div>
           ))}
-        </div>
+        </div>*/}
       </div>
     </section>
   )

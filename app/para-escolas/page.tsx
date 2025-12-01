@@ -1,6 +1,7 @@
 import { GraduationCap, Wrench, Heart, FileText, Sparkles } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { Footer } from "@/components/footer"
 
 const features = [
   {
@@ -83,6 +84,7 @@ export default function ParaEscolasPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   )
 }

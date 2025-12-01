@@ -63,10 +63,10 @@ export function ContactSection() {
       })
 
       // Redirect to WhatsApp with pre-filled message
-      const whatsappNumber = "5511999999999" // Replace with your WhatsApp number
+      const whatsappNumber = "556292752970"
       const whatsappMessage = encodeURIComponent(
         `Olá! Sou ${formData.name} da escola ${formData.school} em ${formData.city}. ${formData.message}`,
-      )
+      ) || "";
       window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank")
 
       // Reset form
@@ -275,12 +275,12 @@ export function ContactSection() {
                   <div>
                     <p className="font-medium text-white/90">WhatsApp</p>
                     <a
-                      href="https://wa.me/5511999999999"
+                      href="https://wa.me/556292752970"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-orange-400 hover:text-orange-300 transition-colors"
                     >
-                      +55 (11) 99999-9999
+                      +55 (62) 9275-2970
                     </a>
                   </div>
                 </div>
@@ -302,7 +302,7 @@ export function ContactSection() {
 
               <div className="flex gap-4">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/blueworld9_/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
@@ -310,15 +310,7 @@ export function ContactSection() {
                   <Instagram className="w-7 h-7 text-white" />
                 </a>
                 <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
-                >
-                  <Linkedin className="w-7 h-7 text-white" />
-                </a>
-                <a
-                  href="https://youtube.com"
+                  href="https://www.youtube.com/@BW9Global"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-14 h-14 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg"

@@ -1,10 +1,11 @@
 "use client"
 
-import { Home, Globe, School, Info, X, Menu } from "lucide-react"
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { Home, Globe, School, Info, Users, X, Menu } from "lucide-react"
+import Image from "next/image"
+import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 
 export function GlassmorphismNav() {
@@ -18,8 +19,25 @@ export function GlassmorphismNav() {
     { icon: Home, label: "Home", href: "/" },
     { icon: Globe, label: "Impacto", href: "/impacto" },
     { icon: School, label: "Para Escolas", href: "/para-escolas" },
+    { icon: Users, label: "Equipe", href: "/equipe" },
     { icon: Info, label: "Sobre", href: "/sobre" },
   ]
+
+  const router = useRouter()
+    const scrollToContact = () => {
+    const isHome = window.location.pathname === "/"
+  
+    if (isHome) {
+      // Já está na página certa → faz scroll suave
+      const element = document.getElementById("contato")
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    } else {
+      // Não está na home → redireciona para lá com hash
+      router.push("/#contato")
+    }
+  }
 
   
 
@@ -86,14 +104,15 @@ export function GlassmorphismNav() {
           {/* BOTÃO DE AÇÃO - DESKTOP */}
           <div className="hidden lg:flex items-center">
             <button className="relative px-6 py-2 mr-4 rounded-full font-semibold text-white border hover:bg-white hover:text-blue-500
-              transition-all duration-800 hover:scale-[1.03]">
+              transition-all duration-800 hover:scale-[1.03]"
+              onClick={scrollToContact}>
             <span className="relative z-10">Contato</span>
             </button>
             <button className="relative px-6 py-2 rounded-full font-semibold text-white 
                 bg-gradient-to-r from-orange-500 to-rose-400
                 hover:from-emerald-400 hover:via-cyan-400 hover:to-blue-500
                 transition-all duration-800 hover:scale-[1.03] hover:border-2"
-                onClick={() => window.location.href = "/portal"}
+                onClick={() => window.location.href = "/login"}
                 >
               <span className="relative z-10">Acessar Portal</span>
             </button>
@@ -142,7 +161,9 @@ export function GlassmorphismNav() {
             </button>
 
             <button className="relative px-6 py-2 ml-4 rounded-full font-semibold text-white border hover:bg-white hover:text-blue-500
-              transition-all duration-800 hover:scale-[1.03]">
+              transition-all duration-800 hover:scale-[1.03] cursor pointer"
+              onClick={scrollToContact}
+              >
             <span className="relative z-10">Contato</span>
             </button>
             </div>

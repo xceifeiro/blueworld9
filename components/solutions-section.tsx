@@ -1,6 +1,6 @@
 "use client"
 
-import { Zap, Users, Lightbulb, Award, Code, Rocket, Sparkles, Trophy } from "lucide-react"
+import { Zap, Users, Lightbulb, Award, Code, Rocket, Sparkles, Trophy, SmilePlus, Radio } from "lucide-react"
 import { AnimatedBackground } from "./animated-background"
 import Image from "next/image"
 
@@ -40,8 +40,8 @@ export function SolutionsSection() {
     },
     {
       icon: Award,
-      title: "Certificação e Reconhecimento",
-      description: "Sistema de certificados que reconhecem competências adquiridas e motivam o aprendizado contínuo.",
+      title: "BNCC",
+      description: "Base Nacional Comum Curricular, que define as aprendizagens essenciais (competências e habilidades) que todos os alunos devem desenvolver na Educação Básica.",
       gradient: "from-purple-500/10 to-pink-500/10",
       borderColor: "border-purple-400/50",
       hoverBorder: "hover:border-purple-300",
@@ -126,6 +126,18 @@ export function SolutionsSection() {
                 </div>
                 <span className="text-slate-300 text-sm">IA & Robótica</span>
               </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                  <SmilePlus className="w-4 h-4 text-green-400" />
+                </div>
+                <span className="text-slate-300 text-sm">Socioemocional</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                  <Radio className="w-4 h-4 text-green-400" />
+                </div>
+                <span className="text-slate-300 text-sm">Social Network</span>
+              </div>
             </div>
           </div>
 
@@ -133,10 +145,10 @@ export function SolutionsSection() {
             {/* BOX ARREDONDADO COM A IMAGEM */}
             <div className="relative aspect-square rounded-2xl overflow-hidden z-[1]">
                 <Image
-                src="/img-03.png"
+                src="/alunos-com-robo.jpg"
                 alt="Professor guiando alunos em atividades STEAM"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 />
             </div>
 

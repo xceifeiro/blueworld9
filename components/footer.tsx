@@ -3,14 +3,25 @@
 import { Button } from "@/components/ui/button"
 import { Instagram, Linkedin, Youtube, Mail, Phone, MapPin, Heart } from "lucide-react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 export function Footer() {
+  
+  const router = useRouter()
   const scrollToContact = () => {
+  const isHome = window.location.pathname === "/"
+
+  if (isHome) {
+    // Já está na página certa → faz scroll suave
     const element = document.getElementById("contato")
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
+  } else {
+    // Não está na home → redireciona para lá com hash
+    router.push("/#contato")
   }
+}
 
   return (
     <footer className="relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white py-16 overflow-hidden">
@@ -40,7 +51,7 @@ export function Footer() {
               </p>
               <div className="flex gap-3">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/blueworld9_"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-500 rounded-lg flex items-center justify-center hover:scale-110 transition-transform"
@@ -48,15 +59,7 @@ export function Footer() {
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
                 <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <Linkedin className="w-5 h-5 text-white" />
-                </a>
-                <a
-                  href="https://youtube.com"
+                  href="https://www.youtube.com/@BW9Global"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center hover:scale-110 transition-transform"
@@ -86,6 +89,11 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
+                  <a href="/equipe" className="text-white/70 hover:text-cyan-400 transition-colors">
+                    Equipe
+                  </a>
+                </li>
+                <li>
                   <a href="/impacto" className="text-white/70 hover:text-cyan-400 transition-colors">
                     Impacto
                   </a>
@@ -105,8 +113,8 @@ export function Footer() {
                 </li>
                 <li className="flex items-start gap-2 text-white/70">
                   <Phone className="w-4 h-4 mt-1 text-orange-400 flex-shrink-0" />
-                  <a href="https://wa.me/5511999999999" className="hover:text-orange-400 transition-colors text-sm">
-                    +55 (11) 99999-9999
+                  <a href="https://wa.me/556292752970" target="_blank" className="hover:text-orange-400 transition-colors text-sm">
+                    +55 (62) 9275-2970
                   </a>
                 </li>
                 <li className="flex items-start gap-2 text-white/70">

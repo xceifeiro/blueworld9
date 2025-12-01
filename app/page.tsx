@@ -12,12 +12,13 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       <AboutHomeSection />
-      <SectionDivider variant="dots" />
+      <SectionDivider variant="default" />
       <SolutionsSection />
       <SectionDivider variant="gradient" />
       <BenefitsSection />
-      <SectionDivider variant="dots" />
-      <ProjectsSection />
+      {/*
+      <SectionDivider variant="gradient" />
+      <ProjectsSection />*/}
       <SectionDivider variant="default" />
       <ContactSection />
       <Footer />

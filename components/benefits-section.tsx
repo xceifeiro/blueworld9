@@ -83,7 +83,7 @@ export function BenefitsSection() {
             {/* IMAGEM ARREDONDADA */}
             <div className="relative aspect-square rounded-2xl overflow-hidden z-[1]">
                 <Image
-                src="/img-04.png"
+                src="/alunos-geral.jpg"
                 alt="Alunos apresentando projeto de tecnologia"
                 fill
                 className="object-cover"
