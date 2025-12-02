@@ -10,7 +10,7 @@ import { SectionDivider } from "@/components/section-divider"
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <HeroSection />
+      <HeroSection/>
       <AboutHomeSection />
       <SectionDivider variant="default" />
       <SolutionsSection />

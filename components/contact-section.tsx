@@ -129,7 +129,7 @@ export function ContactSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <div data-aos="fade-up" className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="font-heading font-bold text-4xl md:text-6xl bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
             Vamos Conversar?
           </h2>
@@ -139,7 +139,7 @@ export function ContactSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="bg-slate-800/50 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl p-8">
+          <div data-aos="fade-right" className="bg-slate-800/50 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-white/90 mb-2">
@@ -248,7 +248,7 @@ export function ContactSection() {
             </form>
           </div>
 
-          <div className="space-y-8">
+          <div data-aos="fade-left" className="space-y-8">
             <div className="bg-slate-800/50 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl p-8">
               <h3 className="font-heading font-bold text-2xl text-cyan-400 mb-6">Informações de Contato</h3>
 

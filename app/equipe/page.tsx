@@ -12,7 +12,7 @@ export default function EquipePage() {
       role: "CEO e Fundador da Blue World 9",
       formacao: "",
       bio: "Como CEO e Fundador da Blue World 9 Soluções Educacionais, Cleomar di Castro é a força motriz por trás da missão da empresa. Ele lidera a estratégia de crescimento e inovação, garantindo que a Blue World 9 permaneça na vanguarda do ensino. Sua visão é dedicada a inspirar a equipe e a elevar o padrão dos programas educacionais, redefinindo o sucesso no aprendizado em todo o mundo.",
-      image: "/equipe/",
+      image: "/webp/cleomar.webp",
       color: "from-cyan-500 to-blue-600",
       social: {
         Phone: "5562993204235",
@@ -24,7 +24,7 @@ export default function EquipePage() {
       role: "Diretor de Educação e Tecnologia Global",
       formacao:"Graduado em Direito e Pedagogia, com especializações em Pedagogia Empresarial, Supervisão Educacional, Robótica Educacional, Psicopedagogia Clínica e Institucional, e Docência Universitária.",
       bio: "Com uma sólida formação jurídica e pedagógica, sua direção conecta a excelência educacional à vanguarda da tecnologia na Blue World 9. Ele lidera a estratégia de ensino e inovação de programas, garantindo que a união entre pedagogia de alta performance e ferramentas tecnológicas impulsione a aprendizagem e o crescimento da empresa.",
-      image: "/professional-cto.png",
+      image: "/webp/diogo.webp",
       color: "from-purple-500 to-pink-600",
       social: {
         email: "carlos.santos@blueworld9.com",
@@ -35,7 +35,7 @@ export default function EquipePage() {
       role: "Coordenador de Tecnologia e Suporte Educacional",
       formacao:"Tecnólogo em Informática para Internet.",
       bio: "Com sólida formação técnica, sua atuação lidera a padronização e a qualidade dos processos tecnológicos em todas as unidades da Blue World 9 (nacionais e internacionais). Sua função principal é capacitar a equipe, atuando no treinamento técnico e pedagógico dos professores para assegurar a excelência e o alto desempenho de toda a rede global.",
-      image: "/equipe/ricardo-att3.png",
+      image: "/webp/ricardo.webp",
       color: "from-orange-500 to-rose-600",
       social: {
         email: "mariana.costa@blueworld9.com",
@@ -46,7 +46,7 @@ export default function EquipePage() {
       role: "Coordenadora Pedagógica Internacional",
       formacao:"Graduada em Letras (Português/Inglês) e Pedagogia, com especializações em Espanhol e Educação Ambiental.",
       bio: "Com sua formação ampla e global, sua atuação lidera a coordenação pedagógica das unidades internacionais da Blue World 9. Sua missão foca em garantir o alinhamento pedagógico e a qualidade educacional das operações externas, dedicando-se ao acompanhamento docente e à orientação estratégica fora do Brasil.",
-      image: "/equipe/daniella-att2.png",
+      image: "/webp/daniella.webp",
       color: "from-green-500 to-emerald-600",
       social: {
         email: "rafael.oliveira@blueworld9.com",
@@ -57,7 +57,7 @@ export default function EquipePage() {
       role: "Diretor Administrativo e de Negócios Global",
       formacao:"Administrador de Empresas com especialização em Gestão Operacional e Comercial.",
       bio: "Com uma visão 360º, sua direção é responsável por toda a estrutura administrativa e comercial da Blue World 9. Ele integra e gere as operações, garantindo o alto padrão de estratégia de vendas, gestão financeira e eficiência administrativa para um crescimento sólido e de excelência em nível nacional e internacional.",
-      image: "/equipe/renato-att2.png",
+      image: "/webp/renato.webp",
       color: "from-yellow-500 to-orange-600",
       social: {
         email: "julia.mendes@blueworld9.com",
@@ -73,7 +73,7 @@ export default function EquipePage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-16">
+            <div data-aos="fade-up" className="text-center mb-16">
               <h1 className="font-heading font-bold text-4xl md:text-6xl bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
                 Nossa Equipe
               </h1>
@@ -84,7 +84,7 @@ export default function EquipePage() {
             </div>
 
             {/* Team Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div data-aos="fade-down" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-10 sm:px-0">
               {teamMembers.map((member, index) => (
                 <div
                   key={index}
@@ -96,15 +96,20 @@ export default function EquipePage() {
                   />
 
                   {/* Image */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
                     <div className={`absolute inset-0 bg-gradient-to-br ${member.color} opacity-20`} />
+
                     <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      fill
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                        src={member.image || "/placeholder.svg"}
+                        alt={member.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw,
+                            (max-width: 1200px) 50vw,
+                            33vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
                     />
-                  </div>
+                </div>
+
 
                   {/* Content */}
                   <div className="p-6">
@@ -153,7 +158,7 @@ export default function EquipePage() {
             </div>
 
             {/* CTA Section */}
-            <div className="mt-20 text-center">
+            <div data-aos="fade-up" className="mt-20 text-center">
               <div className="bg-gradient-to-r from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
                 <h2 className="font-heading font-bold text-2xl md:text-4xl text-white mb-4">
                   Quer fazer parte da equipe?
@@ -163,7 +168,7 @@ export default function EquipePage() {
                   transformar o futuro conosco!
                 </p>
                 <a
-                  href="mailto:rh@blueworld9.com"
+                  href="mailto:contato@bw9global.com"
                   className="inline-block px-8 py-4 rounded-full font-semibold text-white 
                     bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600
                     hover:from-cyan-600 hover:via-blue-600 hover:to-purple-700

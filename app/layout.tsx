@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { GlassmorphismNav } from "@/components/header"
 import { ScrollIndicator } from "@/components/scrollbar"
+import { AOSInit } from "@/components/AOSInit"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${inter.variable} ${dm.variable} font-sans antialiased`}>
+        <AOSInit />
         <header><GlassmorphismNav /></header>
         <ScrollIndicator />
         <div className="blueworld-grid" />

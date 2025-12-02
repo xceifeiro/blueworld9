@@ -7,16 +7,18 @@ export default function SobrePage() {
       <section className="py-30 md:py-42 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h1 className="font-heading font-bold text-4xl md:text-6xl text-cyan-400 text-center mb-6">Sobre Nós</h1>
+            <div data-aos="fade-up">
+              <h1 className="font-heading font-bold text-4xl md:text-6xl text-cyan-400 text-center mb-6">Sobre Nós</h1>
 
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed text-center mb-12">
-              A Blue World 9 nasceu com o propósito de transformar a educação, oferecendo programas tecnológicos e
-              humanizados que conectam professores e alunos a novas formas de aprender, ensinar e inovar. Nosso
-              compromisso é equilibrar tecnologia e sensibilidade, preparando estudantes para o mundo digital sem perder
-              a essência humana.
-            </p>
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed text-center mb-12">
+                A Blue World 9 nasceu com o propósito de transformar a educação, oferecendo programas tecnológicos e
+                humanizados que conectam professores e alunos a novas formas de aprender, ensinar e inovar. Nosso
+                compromisso é equilibrar tecnologia e sensibilidade, preparando estudantes para o mundo digital sem perder
+                a essência humana.
+              </p>
+            </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mt-16">
+            <div data-aos="fade-up" className="grid md:grid-cols-3 gap-8 mt-16">
               <div className="bg-slate-800/50 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-8 shadow-lg hover:shadow-xl hover:border-cyan-400/50 transition-all">
                 <div className="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
                   <Target className="w-7 h-7 text-cyan-400" />
@@ -49,7 +51,7 @@ export default function SobrePage() {
             </div>
 
             {/* Timeline */}
-            <div className="mt-20">
+            <div data-aos="fade-up" className="mt-20">
               <h2 className="font-heading font-bold text-2xl md:text-3xl text-cyan-400 text-center mb-12">
                 Nossa Trajetória
               </h2>

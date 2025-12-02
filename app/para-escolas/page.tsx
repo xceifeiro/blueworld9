@@ -41,7 +41,7 @@ export default function ParaEscolasPage() {
     <main className="min-h-screen pt-20 bg-primary">
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div  data-aos="fade-up" className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="font-heading font-bold text-4xl md:text-6xl text-white mb-6">Para Escolas</h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed">
               A Blue World 9 oferece soluções completas e personalizadas para escolas que desejam inovar com propósito.
@@ -50,7 +50,7 @@ export default function ParaEscolasPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div data-aos="fade-up" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {features.map((feature, index) => {
               const Icon = feature.icon
               return (
@@ -69,7 +69,7 @@ export default function ParaEscolasPage() {
           </div>
 
           {/* CTA Banner */}
-          <div className="max-w-4xl mx-auto">
+          <div data-aos="fade-down" className="max-w-4xl mx-auto">
             <div className="border-white border bg-gradient-to-r from-primary via-cyan-600 to-purple-800 rounded-2xl p-8 md:p-12 text-center shadow-2xl">
               <h2 className="font-heading font-bold text-2xl md:text-4xl text-white mb-4">
                 Descubra como transformar sua escola com a Blue World 9

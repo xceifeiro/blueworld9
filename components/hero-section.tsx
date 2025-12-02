@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import { BookOpen, Cpu, Lightbulb, Atom, GraduationCap } from "lucide-react"
+import Image from "next/image"
 
 export function HeroSection() {
   const [counts, setCounts] = useState({
@@ -94,8 +95,16 @@ export function HeroSection() {
 
       {/* 🔵 BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0">
-        <img src="/bg-v5.png" alt="BlueWorld Background" className="w-full h-full object-cover" />
+        <Image
+          src="/webp/bg-v5.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
       </div>
+
 
       {/* 🔮 FUNDO CINEMATOGRÁFICO */}
       <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
@@ -182,7 +191,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
           {/* 🌟 LEFT - TEXT */}
-          <div className="space-y-8">
+          <div data-aos="fade-right" className="space-y-8">
             <h1 className="text-glow font-heading font-bold text-3xl md:text-5xl text-white leading-tight pt-10">
               Transformando a educação com{" "}
               <span className="text-cyan-400">Tecnologia</span>,{" "}
@@ -217,19 +226,22 @@ export function HeroSection() {
           </div>
 
           {/* 🌟 RIGHT - IMAGEM */}
-          <div className="relative">
+          <div data-aos="fade-left" className="relative w-full aspect-square">
             <div className="absolute -inset-4 bg-white/10 blur-2xl rounded-3xl" />
-            <img
-              src="/img-01.png"
+
+            <Image
+              src="/webp/img-01.webp"
               alt="Tecnologia e Educação"
-              className="relative w-full object-cover hero-floating"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain relative hero-floating rounded-3xl"
             />
           </div>
-
         </div>
 
         {/* 🔢 CONTADORES */}
-        <div className="md:grid-cols-3 justify-items-center grid grid-cols-1 mt-20 pt-10 border-t border-white/20 text-glow">
+        <div data-aos="fade-up" className="md:grid-cols-3 justify-items-center grid grid-cols-1 mt-20 pt-10 border-t border-white/20 text-glow">
           <div>
             <div className="text-5xl font-bold text-white">+{counts.schools}</div>
             <p className="text-white/80 text-sm">Escolas</p>

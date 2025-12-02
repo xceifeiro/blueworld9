@@ -75,7 +75,7 @@ export function AboutHomeSection() {
       <AnimatedBackground variant="about" />
       {/* HEADER */}
       <div className="container mx-auto px-6 relative z-10 max-w-300">
-        <div className="text-center mb-16 space-y-4">
+        <div data-aos="fade-down" className="text-center mb-16 space-y-4">
           <div className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-600/20 to-cyan-500/20 border border-cyan-400/50 rounded-full backdrop-blur">
             <p className="text-sm font-semibold text-cyan-500">
               SOBRE NÓS
@@ -96,17 +96,21 @@ export function AboutHomeSection() {
         <div className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-2">
           <div className="relative w-full max-w-md mx-auto">
             {/* BOX COM BORDA ARREDONDADA E CLIP DA IMAGEM */}
-            <div className="relative aspect-square rounded-2xl overflow-hidden z-[1]">
-                <Image
-                src="/sala-de-aula.jpeg"
-                alt="Estudantes trabalhando com robótica"
+            <div data-aos="fade-up" className="relative aspect-square rounded-2xl overflow-hidden z-[1]">
+              <Image
+                src="/webp/sala-de-aula.webp"
+                alt="Estudantes trabalhando com robótica e tecnologia em sala de aula"
                 fill
+                priority
+                sizes="(max-width: 768px) 100vw,
+                      (max-width: 1200px) 50vw,
+                      33vw"
                 className="object-cover"
-                />
+              />
             </div>
 
             {/* ÍCONES FLUTUANTES (FORA DO OVERFLOW-HIDDEN) */}
-            <div className="absolute inset-0 pointer-events-none z-[5]">
+            <div data-aos="fade-down" className="absolute inset-0 pointer-events-none z-[5]">
 
                 <div className="absolute -top-8 -left-12 w-16 h-16 
                 bg-gradient-to-br from-purple-500 to-pink-500 
@@ -147,7 +151,7 @@ export function AboutHomeSection() {
             </div>
 
 
-          <div className="space-y-6">
+          <div data-aos="fade-left" className="space-y-6">
             <h3 className="font-heading text-3xl font-bold text-cyan-500">Metodologia Inovadora que Transforma</h3>
             <p className="text-lg text-slate-300 leading-relaxed">
               Nossa abordagem combina tecnologia de ponta com práticas pedagógicas comprovadas, criando experiências de
@@ -182,7 +186,7 @@ export function AboutHomeSection() {
         </div>
 
         {/* PRINCIPLES GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {principles.map((principle, index) => {
             const Icon = principle.icon
             return (

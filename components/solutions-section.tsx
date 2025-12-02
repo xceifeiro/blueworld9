@@ -76,7 +76,7 @@ export function SolutionsSection() {
     <section className="relative py-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
       <AnimatedBackground variant="solutions" />
       <div className="container mx-auto px-6 relative z-10 max-w-300">
-        <div className="text-center mb-16 space-y-4">
+        <div data-aos="fade-down" className="text-center mb-16 space-y-4">
           <div className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-400/50 rounded-full backdrop-blur">
             <p className="text-sm font-semibold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
               NOSSAS SOLUÇÕES
@@ -95,7 +95,7 @@ export function SolutionsSection() {
         </div>
 
         <div className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 order-2 lg:order-1">
+          <div data-aos="fade-right" className="space-y-6 order-2 lg:order-1">
             <h3 className="font-heading text-3xl font-bold text-orange-400">Tecnologia que Faz a Diferença</h3>
             <p className="text-lg text-slate-300 leading-relaxed">
               Oferecemos uma plataforma completa e integrada que conecta professores, alunos e gestores em um
@@ -141,17 +141,19 @@ export function SolutionsSection() {
             </div>
           </div>
 
-          <div className="relative order-1 lg:order-2 w-full max-w-md mx-auto">
+          <div data-aos="fade-left" className="relative order-1 lg:order-2 w-full max-w-md mx-auto">
             {/* BOX ARREDONDADO COM A IMAGEM */}
             <div className="relative aspect-square rounded-2xl overflow-hidden z-[1]">
-                <Image
-                src="/alunos-com-robo.jpg"
+              <Image
+                src="/webp/alunos-tecnologia.webp"
                 alt="Professor guiando alunos em atividades STEAM"
                 fill
+                sizes="(max-width: 768px) 100vw,
+                      (max-width: 1200px) 50vw,
+                      33vw"
                 className="object-cover object-center"
-                />
+              />
             </div>
-
             {/* ÍCONES FLUTUANTES — FORA DO OVERFLOW-HIDDEN */}
             <div className="absolute inset-0 pointer-events-none z-[5]">
 
@@ -201,6 +203,7 @@ export function SolutionsSection() {
             return (
               <div
                 key={index}
+                data-aos="fade-up"
                 className={`group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br ${solution.gradient} border ${solution.borderColor} ${solution.hoverBorder} backdrop-blur transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer`}
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-white transition-opacity duration-300" />

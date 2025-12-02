@@ -74,7 +74,7 @@ export function GlassmorphismNav() {
           {/* LOGO */}
           <div className="flex items-center gap-2">
             <Image
-              src="/logo-branca-bw9-extends.png"
+              src="/webp/logo-branca-bw9-extends.webp"
               alt="BlueWorld9"
               width={180}
               height={80}

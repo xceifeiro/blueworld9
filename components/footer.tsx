@@ -35,10 +35,10 @@ export function Footer() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             {/* Brand Section */}
-            <div className="md:col-span-2 space-y-6">
+            <div data-aos="fade-right" className="md:col-span-2 space-y-6">
               <div className="flex items-center justify-center">
                 <Image
-                  src="/logo-branca-bw9.png"
+                  src="/webp/logo-branca-bw9.webp"
                   alt="BlueWorld9"
                   width={220}
                   height={180}
@@ -70,7 +70,7 @@ export function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div data-aos="fade-up">
               <h4 className="font-heading font-bold text-lg mb-4 text-cyan-400">Links Rápidos</h4>
               <ul className="space-y-3">
                 <li>
@@ -102,7 +102,7 @@ export function Footer() {
             </div>
 
             {/* Contact Info */}
-            <div>
+            <div data-aos="fade-left">
               <h4 className="font-heading font-bold text-lg mb-4 text-orange-400">Contato</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2 text-white/70">
@@ -126,7 +126,7 @@ export function Footer() {
           </div>
 
           {/* CTA Section */}
-          <div className="py-12 border-t border-b border-white/10 my-8">
+          <div data-aos="fade-left" className="py-12 border-t border-b border-white/10 my-8">
             <div className="text-center space-y-6">
               <h3 className="font-heading font-bold text-2xl md:text-3xl bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Pronto para Transformar a Educação?
