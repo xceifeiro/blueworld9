@@ -1,18 +1,30 @@
-"use client"
+"use client";
 
+import React, { useMemo } from "react";
 import {
-  BookOpen, Cpu, Lightbulb, Atom, GraduationCap, CircuitBoard,
-  Zap, Code, Users, Target
-} from "lucide-react"
-import { useMemo } from "react"
+  BookOpen,
+  Cpu,
+  Lightbulb,
+  Atom,
+  GraduationCap,
+  CircuitBoard,
+  Zap,
+  Code,
+  Users,
+  Target,
+} from "lucide-react";
 
 interface AnimatedBackgroundProps {
-  variant?: "about" | "solutions" | "benefits" | "projects" | "impact" | "default"
+  variant?: "about" | "solutions" | "benefits" | "projects" | "impact" | "default";
 }
 
-export function AnimatedBackground({ variant = "default" }: AnimatedBackgroundProps) {
+function seededRandom(seed: number) {
+  let x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
 
-  // evita recalcular random a cada tecla
+function AnimatedBackgroundComponent({ variant = "default" }: AnimatedBackgroundProps) {
+  /* ÍCONES FIXOS POR VARIANTE */
   const icons = useMemo(() => {
     const iconMap = {
       about: [BookOpen, Cpu, Lightbulb, Atom, GraduationCap, CircuitBoard],
@@ -21,61 +33,64 @@ export function AnimatedBackground({ variant = "default" }: AnimatedBackgroundPr
       projects: [CircuitBoard, Code, Cpu, Atom, Zap, Lightbulb],
       impact: [Users, GraduationCap, Target, BookOpen, Lightbulb, Atom],
       default: [BookOpen, Cpu, Lightbulb, Atom, GraduationCap, CircuitBoard],
-    }
-    return iconMap[variant] || iconMap.default
-  }, [variant])
+    };
 
-  // gera posições fixas apenas 1 vez
+    return iconMap[variant] || iconMap.default;
+  }, [variant]);
+
+  /* POSIÇÕES FIXAS PARA ÍCONES (SEM RANDOM RE-RENDER) */
   const iconPositions = useMemo(() => {
     return icons.map((_, i) => ({
       size: 20 + (i % 3) * 8,
-      top: Math.random() * 80 + 10,
-      left: Math.random() * 80 + 10,
+      top: 10 + seededRandom(i + 10) * 80,
+      left: 10 + seededRandom(i + 20) * 80,
       delay: i * 0.5,
-    }))
-  }, [icons])
+    }));
+  }, [icons]);
 
-  const particles1 = useMemo(() => (
-    [...Array(40)].map(() => ({
-      size: 1 + Math.random() * 3,
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      opacity: 0.2 + Math.random() * 0.4,
-      blur: Math.random() * 2,
-      duration: 2 + Math.random() * 3,
-      delay: Math.random() * 3,
-    }))
-  ), [])
+  /* PARTICLES LAYER 1 */
+  const particles1 = useMemo(() => {
+    return [...Array(40)].map((_, i) => ({
+      size: 1 + seededRandom(i + 30) * 3,
+      top: seededRandom(i + 40) * 100,
+      left: seededRandom(i + 50) * 100,
+      opacity: 0.2 + seededRandom(i + 60) * 0.4,
+      blur: seededRandom(i + 70) * 2,
+      duration: 2 + seededRandom(i + 80) * 3,
+      delay: seededRandom(i + 90) * 3,
+    }));
+  }, []);
 
-  const particles2 = useMemo(() => (
-    [...Array(40)].map(() => ({
-      size: 1 + Math.random() * 3,
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      blur: 1 + Math.random() * 3,
-      duration: 3 + Math.random() * 4,
-    }))
-  ), [])
+  /* PARTICLES LAYER 2 */
+  const particles2 = useMemo(() => {
+    return [...Array(40)].map((_, i) => ({
+      size: 1 + seededRandom(i + 100) * 3,
+      top: seededRandom(i + 110) * 100,
+      left: seededRandom(i + 120) * 100,
+      blur: 1 + seededRandom(i + 130) * 3,
+      duration: 3 + seededRandom(i + 140) * 4,
+    }));
+  }, []);
 
-  const particles3 = useMemo(() => (
-    [...Array(20)].map(() => ({
-      size: 2 + Math.random() * 4,
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      blur: 2 + Math.random() * 5,
-      duration: 4 + Math.random() * 5,
-    }))
-  ), [])
-
+  /* PARTICLES LAYER 3 */
+  const particles3 = useMemo(() => {
+    return [...Array(20)].map((_, i) => ({
+      size: 2 + seededRandom(i + 200) * 4,
+      top: seededRandom(i + 210) * 100,
+      left: seededRandom(i + 220) * 100,
+      blur: 2 + seededRandom(i + 230) * 5,
+      duration: 4 + seededRandom(i + 240) * 5,
+    }));
+  }, []);
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
 
-      {/* Organic blobs */}
+      {/* Background organic blobs (mantido igual) */}
       <div className="absolute top-20 left-1/3 w-96 h-96 bg-cyan-400/15 rounded-full blur-[120px] animate-[organicMove_12s_ease-in-out_infinite]" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-purple-500/15 rounded-full blur-[140px] animate-[organicMove_14s_ease-in-out_infinite]" />
       <div className="absolute top-1/2 -left-20 w-[400px] h-[400px] bg-emerald-400/15 rounded-full blur-[110px] animate-[organicMove_10s_ease-in-out_infinite]" />
 
-      {/* FIXED ICONS */}
+      {/* ÍCONES FLOATING FIXOS */}
       {icons.map((Icon, i) => (
         <Icon
           key={i}
@@ -90,7 +105,7 @@ export function AnimatedBackground({ variant = "default" }: AnimatedBackgroundPr
         />
       ))}
 
-      {/* PARTICLES: Layer 1 */}
+      {/* PARTICLES LAYER 1 */}
       {particles1.map((p, i) => (
         <div
           key={`p1-${i}`}
@@ -108,7 +123,7 @@ export function AnimatedBackground({ variant = "default" }: AnimatedBackgroundPr
         />
       ))}
 
-      {/* PARTICLES: Layer 2 */}
+      {/* PARTICLES LAYER 2 */}
       {particles2.map((p, i) => (
         <div
           key={`p2-${i}`}
@@ -124,7 +139,7 @@ export function AnimatedBackground({ variant = "default" }: AnimatedBackgroundPr
         />
       ))}
 
-      {/* PARTICLES: Layer 3 */}
+      {/* PARTICLES LAYER 3 */}
       {particles3.map((p, i) => (
         <div
           key={`p3-${i}`}
@@ -140,5 +155,7 @@ export function AnimatedBackground({ variant = "default" }: AnimatedBackgroundPr
         />
       ))}
     </div>
-  )
+  );
 }
+
+export const AnimatedBackground = React.memo(AnimatedBackgroundComponent);

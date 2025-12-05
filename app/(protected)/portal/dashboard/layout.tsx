@@ -26,7 +26,7 @@ export default async function DashboardLayout({ children }: { children: ReactNod
   const isAdmin = teacher.role === "admin";
 
   return (
-    <div className="min-h-screen flex bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen flex">
       
       {/* SIDEBAR LATERAL PROFISSIONAL */}
       <PortalSidebar isAdmin={isAdmin} />

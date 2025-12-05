@@ -33,7 +33,7 @@ export default async function PortalDashboardPage() {
   const documents_vazio = documents.length === 0;
 
   return (
-    <div className="min-h-screen rounded-xl bg-cyan-900/10">
+    <div className="relative min-h-screen rounded-xl bg-cyan-900/10">
       {/* Header */}
       <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-xl rounded-xl">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">

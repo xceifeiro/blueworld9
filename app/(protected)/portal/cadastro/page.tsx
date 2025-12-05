@@ -149,7 +149,7 @@ export default function PortalCadastroPage() {
   }
 
   return (
-    <div className="pt-30 relative min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"><GlassmorphismNav />
+    <div className="pt-30 relative min-h-screen flex items-center justify-center p-4"><GlassmorphismNav />
 
       <Card className="w-full max-w-md relative z-10 bg-slate-900/80 backdrop-blur-xl border-cyan-500/20 my-8">
         <CardHeader className="text-center space-y-4">

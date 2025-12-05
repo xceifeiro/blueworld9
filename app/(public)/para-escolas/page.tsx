@@ -2,6 +2,7 @@ import { GraduationCap, Wrench, Heart, FileText, Sparkles } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Footer } from "@/components/footer"
+import { AnimatedBackground } from '@/components/animated-background'
 
 const features = [
   {
@@ -38,8 +39,9 @@ const features = [
 
 export default function ParaEscolasPage() {
   return (
-    <main className="min-h-screen pt-20 bg-primary">
-      <section className="py-20 md:py-32">
+    <main className="pt-20 bg-primary">
+      <section className="relative py-20 md:py-32"><AnimatedBackground />
+        
         <div className="container mx-auto px-4">
           <div  data-aos="fade-up" className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="font-heading font-bold text-4xl md:text-6xl text-white mb-6">Para Escolas</h1>
