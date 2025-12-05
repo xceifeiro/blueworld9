@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { User, Lock, Eye, EyeOff, GraduationCap } from "lucide-react"
-import { AnimatedBackground } from "@/components/animated-background"
 import Link from "next/link"
 import { GlassmorphismNav } from "@/components/header"
 
@@ -102,7 +101,7 @@ export default function PortalLoginPage() {
   return (
     
     <div className="relative min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      <AnimatedBackground variant="default" /> <GlassmorphismNav />
+   <GlassmorphismNav />
 
       <Card className="w-full max-w-md relative z-10 bg-slate-900/80 backdrop-blur-xl border-cyan-500/20">
         <CardHeader className="text-center space-y-4">

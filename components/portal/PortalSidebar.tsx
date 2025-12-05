@@ -49,7 +49,7 @@ export function PortalSidebar({ isAdmin }: { isAdmin: boolean }) {
           top-6 left-4
           w-72 h-[calc(100vh-3rem)]   /* altura menor que a tela */
           transform transition-all duration-300 ease-in-out
-          ${open ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+          ${open ? "translate-x-0" : "-translate-x-[300px] md:translate-x-0"}
 
           bg-cyan-800/10 backdrop-blur-2xl
           border border-white/20
