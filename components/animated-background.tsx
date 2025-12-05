@@ -38,15 +38,34 @@ function AnimatedBackgroundComponent({ variant = "default" }: AnimatedBackground
     return iconMap[variant] || iconMap.default;
   }, [variant]);
 
-  /* POSIÇÕES FIXAS PARA ÍCONES (SEM RANDOM RE-RENDER) */
+  /* POSIÇÕES FIXAS PARA ÍCONES GRANDES */
   const iconPositions = useMemo(() => {
     return icons.map((_, i) => ({
-      size: 20 + (i % 3) * 8,
-      top: 10 + seededRandom(i + 10) * 80,
-      left: 10 + seededRandom(i + 20) * 80,
-      delay: i * 0.5,
+      size: 40 + (i % 3) * 25,  
+      top: 5 + seededRandom(i + 10) * 90,
+      left: 5 + seededRandom(i + 20) * 90,
+      delay: i * 0.8,
+      opacity: 0.18 + (i % 3) * 0.07, 
     }));
   }, [icons]);
+
+  /* RENDERIZAÇÃO DOS ÍCONES FLOATING */
+  {icons.map((Icon, i) => (
+    <Icon
+      key={i}
+      className="absolute animate-[float_9s_ease-in-out_infinite]"
+      style={{
+        width: iconPositions[i].size,
+        height: iconPositions[i].size,
+        top: `${iconPositions[i].top}%`,
+        left: `${iconPositions[i].left}%`,
+        opacity: iconPositions[i].opacity,
+        color: "white",
+        filter: "drop-shadow(0 0 8px rgba(255,255,255,0.2))",
+        animationDelay: `${iconPositions[i].delay}s`,
+      }}
+    />
+  ))}
 
   /* PARTICLES LAYER 1 */
   const particles1 = useMemo(() => {

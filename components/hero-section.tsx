@@ -12,7 +12,6 @@ export function HeroSection() {
     projects: 0,
   })
 
-  // 🔢 CONTADORES COM ANIMAÇÃO SUAVE
   useEffect(() => {
     const duration = 2000
     const steps = 60
@@ -44,19 +43,16 @@ export function HeroSection() {
     return () => clearInterval(timer)
   }, [])
 
-  // 🎯 Botão scroll
   const scrollToContact = () => {
     const element = document.getElementById("contato")
     if (element) element.scrollIntoView({ behavior: "smooth" })
   }
 
-  // 🌟 PARTICULAS FIXAS (sem bug)
   const [particles1, setParticles1] = useState<any[]>([])
   const [particles2, setParticles2] = useState<any[]>([])
   const [particles3, setParticles3] = useState<any[]>([])
 
   useEffect(() => {
-    // CAMADA 1 — Brancas
     const p1 = Array.from({ length: 80 }).map(() => ({
       size: 1 + Math.random() * 4,
       top: Math.random() * 100,
@@ -67,7 +63,6 @@ export function HeroSection() {
       delay: Math.random() * 4,
     }))
 
-    // CAMADA 2 — Cyan
     const p2 = Array.from({ length: 60 }).map(() => ({
       size: 1 + Math.random() * 4,
       top: Math.random() * 100,
@@ -76,7 +71,6 @@ export function HeroSection() {
       duration: 3 + Math.random() * 5,
     }))
 
-    // CAMADA 3 — Roxas
     const p3 = Array.from({ length: 40 }).map(() => ({
       size: 2 + Math.random() * 5,
       top: Math.random() * 100,
@@ -93,7 +87,6 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20">
 
-      {/* 🔵 BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/webp/bg-v5.webp"
@@ -106,10 +99,8 @@ export function HeroSection() {
       </div>
 
 
-      {/* 🔮 FUNDO CINEMATOGRÁFICO */}
       <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
 
-        {/* 🧬 FIOS DE LUZ */}
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
@@ -121,19 +112,16 @@ export function HeroSection() {
           />
         ))}
 
-        {/* 🔵 BOLHAS ORGÂNICAS */}
         <div className="absolute top-20 left-1/3 w-96 h-96 bg-cyan-400/20 rounded-full blur-[120px] animate-[organicMove_12s_ease-in-out_infinite]" />
         <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-[140px] animate-[organicMove_14s_ease-in-out_infinite]" />
         <div className="absolute top-1/2 -left-20 w-[400px] h-[400px] bg-emerald-400/20 rounded-full blur-[110px] animate-[organicMove_10s_ease-in-out_infinite]" />
 
-        {/* 📘 ÍCONES LUCIDE ANIMADOS */}
         <BookOpen className="absolute top-32 left-12 w-20 h-20 text-white/30 animate-[float_7s_ease-in-out_infinite]" />
         <Cpu className="absolute bottom-40 right-24 w-24 h-24 text-cyan-300/40 animate-[float_9s_ease-in-out_infinite]" />
         <Lightbulb className="absolute top-1/4 right-14 w-20 h-20 text-yellow-300/40 animate-[float_8s_ease-in-out_infinite]" />
         <Atom className="absolute bottom-1/3 left-1/3 w-24 h-24 text-orange-400/35 animate-[float_10s_ease-in-out_infinite]" />
         <GraduationCap className="absolute top-1/2 right-1/3 w-20 h-20 text-purple-400/35 animate-[float_11s_ease-in-out_infinite]" />
 
-        {/* ✨ PARTICULAS 1 */}
         {particles1.map((p, i) => (
           <div
             key={`p1-${i}`}
@@ -151,7 +139,6 @@ export function HeroSection() {
           />
         ))}
 
-        {/* ✨ PARTICULAS 2 */}
         {particles2.map((p, i) => (
           <div
             key={`p2-${i}`}
@@ -166,8 +153,6 @@ export function HeroSection() {
             }}
           />
         ))}
-
-        {/* ✨ PARTICULAS 3 */}
         {particles3.map((p, i) => (
           <div
             key={`p3-${i}`}
@@ -185,12 +170,10 @@ export function HeroSection() {
 
       </div>
 
-      {/* 🌟 CONTEÚDO PRINCIPAL */}
       <div className="container mx-auto px-6 relative z-10">
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          {/* 🌟 LEFT - TEXT */}
           <div data-aos="fade-right" className="space-y-8">
             <h1 className="text-glow font-heading font-bold text-3xl md:text-5xl text-white leading-tight pt-10">
               Transformando a educação com{" "}
@@ -203,7 +186,6 @@ export function HeroSection() {
               Metodologias Ativas, Robótica, Tecnologia Maker, a abordagem STEAM, Inteligência Artificial (IA) e Educação Socioemocional são fundamentais para preparar os alunos para os desafios da Educação 5.0.
             </p>
 
-            {/* BUTTONS */}
             <div className="flex flex-col md:flex-row gap-4">
               <Button
                 size="lg"
@@ -224,7 +206,6 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* 🌟 RIGHT - IMAGEM */}
           <div data-aos="fade-left" className="relative w-full aspect-square">
             <div className="absolute -inset-4 bg-white/10 blur-2xl rounded-3xl" />
 
@@ -239,7 +220,6 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* 🔢 CONTADORES */}
         <div data-aos="fade-up" className="md:grid-cols-3 justify-items-center grid grid-cols-1 mt-20 pt-10 border-t border-white/20 text-glow">
           <div>
             <div className="text-5xl font-bold text-white">+{counts.schools}</div>
@@ -259,7 +239,6 @@ export function HeroSection() {
 
       </div>
 
-      {/* 🌫️ GRADIENTE DE TRANSIÇÃO */}
       <div className="absolute bottom-0 left-0 right-0 h-40 z-[5]
       bg-gradient-to-b from-transparent to-slate-950" />
 
